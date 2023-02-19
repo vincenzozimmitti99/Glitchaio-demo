@@ -1,0 +1,6 @@
+Options +FollowSymLinks -MultiViews
+RewriteEngine On
+RewriteRule ^articoli/([0-9]+)/(.*)?$ article.php?id=$1&title=$2 [QSA]
+#Remove last slash
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*[^/]$ /$0/ [L,R=301]

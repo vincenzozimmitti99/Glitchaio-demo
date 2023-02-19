@@ -1,0 +1,175 @@
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKTDZ2ZT7W"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-MKTDZ2ZT7W');
+		</script>
+		<script data-ad-client="ca-pub-4346670476382673" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link rel="stylesheet" href="https://www.glitchaio.it/libs/style.css">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://www.glitchaio.it/imgs/16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://www.glitchaio.it/imgs/32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="https://www.glitchaio.it/imgs/96x96.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="https://www.glitchaio.it/imgs/192x192.png">
+		<meta name="title" content="Glitchaio - Contattaci">
+		<meta name="description" content="Articolaio di notizie poco affidabili per consulto puramente ludico. Ogni riferimento a persone esistenti o a fatti realmente accaduti è puramente casuale.">
+		<meta name="language" content="Italian">
+		<meta name="keywords" content="articoli,satira,intrattenimento,videogiochi">
+		<title>Glitchaio - Contattaci</title>
+		<meta property="og:title" content="Glitchaio - Contattaci">
+		<meta property="og:description" content="Articolaio di notizie poco affidabili per consulto puramente ludico. Ogni riferimento a persone esistenti o a fatti realmente accaduti è puramente casuale.">
+		<meta property="og:image" content="https://www.glitchaio.it/imgs/192x192.png">
+		<meta property="og:url" content="https://www.glitchaio.it/">
+		<meta property="og:type" content="website">
+		<meta property="og:locale" content="it_IT">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="theme-color" content="#EFDF77">
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<?php
+		include "libs/conn.php";
+		
+		if(isset($_POST["request"])){
+			if($_POST["request"]=="Invia"){
+				global $conn;
+				$name = mysqli_real_escape_string($conn, trim($_POST["name"]));
+				$email = mysqli_real_escape_string($conn, trim($_POST["email"]));
+				$subject = mysqli_real_escape_string($conn, trim($_POST["subject"]));
+				$message = mysqli_real_escape_string($conn, trim($_POST["message"]));
+				if($subject=="ideas")
+					$subject = "Idee su un articolo";
+				else if($subject=="problems")
+					$subject = "Problemi nel sito";
+				else if($subject=="other")
+					$subject = "Altro";
+				
+				$query = "INSERT INTO contact(`name`, `email`, `subject`, `message`) VALUES ('$name', '$email', '$subject', '$message')";
+				runQuery($query);
+				if(mysqli_affected_rows($conn)>0)
+					header("Location: /contact.php?result=contactsuccess");
+				else
+					header("Location: /contact.php?result=contactfailure");
+			}
+		}
+		?>
+		<nav class="navbar navbar-expand-md navbar-light primary">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav w-100">
+					<a class="nav-item nav-link" href="/">Home</a>
+					<a class="nav-item nav-link" href="random.php">Articolo a caso</a>
+					<a class="nav-item nav-link" href="aboutus.php">Chi siamo</a>
+					<a class="nav-item nav-link active" href="contact.php">Contattaci <span class="sr-only">(current)</span></a>
+					<form action="search.php" method="GET" class="row my-0 ml-md-auto">
+						<div class="col">
+							<input name="q" class="form-control mr-sm-2" type="search" placeholder="Cerca un articolo" aria-label="Search" style="height:40px;">
+						</div>
+						<div style="padding-right:15px;">
+							<button class="btn secondary btn-outline-secondary my-0 h-100" type="submit"><i class="fa fa-search"></i></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div class="row no-gutters justify-content-center">
+			<div class="col-11 col-sm-8 col-md-6 col-lg-3 d-flex my-3">
+				<a href="https://www.glitchaio.it/"><img src="https://glitchaio.it/imgs/logo.png" alt="Logo" class="img-fluid" /></a>
+			</div>
+		</div>
+		<div class="row no-gutters justify-content-center">
+			<div class="col-md-2 col-lg-3">
+				<!--<div class="d-md-flex d-none justify-content-center">
+					<div class="text-center" style="width: 150px;height: 600px;background-color: grey;">
+						Spazio pubblicitario
+					</div>
+				</div>-->
+			</div>
+			<div class="col-md-8 col-lg-6">
+				<h2>Contattaci</h2>
+				<p>Se stai cercando un modo per contattarci puoi usare questa pagina o in alternativa scriverci nei social.</p>
+				<form action="" method="POST" class="mx-2">
+					<div class="form-group">
+						<label for="name">Nome*</label>
+						<input id="name" name="name" type="text" class="form-control" placeholder="Inserisci il tuo nome" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Email*</label>
+						<input id="email" name="email" type="email" class="form-control" placeholder="Inserisci la tua email" required>
+					</div>
+					<div class="form-group">
+						<label for="subject">Oggetto</label>
+						<select id="subject" name="subject" type="text" class="form-control">
+							<option value="ideas" selected>Idee su un articolo</option>
+							<option value="problems">Problemi nel sito</option>
+							<option value="other">Altro</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="message">Messaggio*</label>
+						<textarea id="message" name="message" type="text" class="form-control" style="height:200px;" required></textarea>
+					</div>
+					<div class="form-group text-center">
+						<input id="request" name="request" type="submit" class="btn btn-custom-secondary" value="Invia">
+					</div>
+					<div class="row mx-0 d-flex" style="margin-top:2rem!important;margin-bottom:2rem!important;">
+						<!--<div class="col d-flex justify-content-center">
+							<div class="text-center" style="width: 600px;height: 150px;background-color: grey;">
+								Spazio pubblicitario
+							</div>
+						</div>-->
+					</div>
+				</form>
+			</div>
+			<div class="col-md-2 col-lg-3">
+				<!--<div class="d-md-flex d-none justify-content-center">
+					<div class="text-center" style="width: 150px;height: 600px;background-color: grey;">
+						Spazio pubblicitario
+					</div>
+				</div>-->
+			</div>
+		</div>
+		<div id="cookiepolicy" class="row no-gutters primary py-2">
+			<div class="mx-2">
+				<p>Questo sito utilizza i cookie</p>
+				<p>al fine di inviare messaggi pubblicitari e informativi rispettando le preferenze dell'utente e le modalità descritte nell'informativa estesa. Proseguendo la navigazione accetti l'uso dei cookie.</p>
+				<button class="btn btn-custom-secondary" onclick="acceptCookie();">Accetto</button>
+				<button class="btn btn-custom-secondary" onclick="refuseCookie();">Rifiuto</button>
+				<a href="https://www.glitchaio.it/privacypolicy.php" class="ml-2">Informativa Estesa</a>
+			</div>
+		</div>
+		<div class="row no-gutters justify-content-center align-items-center tertiary footer">
+			<div class="mx-2 text-center text-tertiary" style="font-size:.8rem;margin-top:3rem;">
+				<p>Tutte le informazioni su questo sito - <a href="https://www.glitchaio.it">www.glitchaio.it</a> - sono pubblicate in buona fede e per puro scopo satirico. Glitchaio non si prende nessuna responsabilità riguardo l'affidabilità delle informazioni presenti sul sito.</p>
+				<p>Se avete bisogno di più informazioni sul disclaimer del nostro sito, sentitevi liberi di contattarci al nostro indirizzo email <a href="mailto:info@glitchaio.it">info@glitchaio.it</a>.</p>
+			</div>
+			<div class="text-left ml-2">
+				<a href="https://www.glitchaio.it/privacypolicy.php">Privacy Policy</a>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+		<script src="https://www.glitchaio.it/libs/js/cookies.js"></script>
+		<script>
+		var result = "<?php if(isset($_GET['result'])) echo $_GET['result']; ?>";
+		if(result!=""){
+			window.history.replaceState(null, "", "../contact.php")
+			if(result==="contactsuccess"){
+				window.onload = function(){alert("La tua richiesta è stata inviata con successo.")};
+			} else if(result==="contactfailure"){
+				window.onload = function(){alert("Si è verificato un errore durante l'invio della richiesta.")};
+			}
+		}
+		</script>
+	</body>
+</html>

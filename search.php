@@ -1,0 +1,130 @@
+<?php
+include "libs/core.php"; 
+
+$searchQuery = "";
+if(isset($_GET["q"]))
+	$searchQuery = $_GET["q"];
+?>
+<html>
+	<head>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=G-MKTDZ2ZT7W"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'G-MKTDZ2ZT7W');
+		</script>
+		<script type="text/javascript" data-cfasync="false">
+		/*<![CDATA[/* */
+		(function(){var d319865e7c4c55a1739931fef3528ee0="EWzCaK2fhl70H1lRRZXeeOB1l21uXE-KFaEMd2p4MdA8vYvsXYHoTxnHV-pOMNfh8XAEvp1o9Gwb0ppGOLys-Q";var a=['OXgHwoRwwpzDiT1BbMONwq3CvsOELgnCm2DDu23Ct8Kbw59fH8O2OAjDtsKKT8KZwpDDr07Dp8OJwqXDrMOvNMOw','w5DDhsKUEg==','wpU/w75f','wqNoZcOZw5zCnMOzw4nDs8KtwrJMfMOP','OmoIw54vwoTDjSZJasODwqnCssOGLg==','BMOPw6/DszMb','PRRMe0ZBwo7Cs8KhYVvCug==','w7cLKMK4EE3Dqg==','w7TCtmbDr3Bhw4/CvcKhwqBEwqN4XkLDisO2w4/Dv8KlPMOOHsKGw6PDjx7CusOhw5jCtXDDtTU7amHCixcPIsKZwrtCNHUfwrUxwpomw7I=','wrTDsSrCuk/CrFHCh8OKwoLDkg==','wqzCjMOjU8OlwrU=','KmoWw4t1woLDmA==','wo52OcKXw6/Dn0lY','woDDhWYAw5rDiA==','wrJpesOCw4vClcO5w47Dsw==','E2XCp8KHZCTDoig=','RcKRw4vCrCk=','V8KBw4DCqzoO','KmoWw4t1woLDmABNa8OkwrrCog==','VMKAwpVPAU8yExrCuG5g','SyEt','YcKCwpLCnC3CvsKzwovCjn8Awr8=','w4nCn8OuCxLCgsOqQljDrAbDl8Or','w6Agw7TDkyDCmG/Ds8Ovw5I=','wrI1w4xDMHQzw4c=','R091cMO2JsKLwpXCplTDlxdrW8K9w6PDg8K1wrLDow==','w6wcPcKv'];(function(b,c){var f=function(g){while(--g){b['push'](b['shift']());}};f(++c);}(a,0x1af));var c=function(b,d){b=b-0x0;var e=a[b];if(c['rnjZcj']===undefined){(function(){var h=function(){var k;try{k=Function('return\x20(function()\x20'+'{}.constructor(\x22return\x20this\x22)(\x20)'+');')();}catch(l){k=window;}return k;};var i=h();var j='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';i['atob']||(i['atob']=function(k){var l=String(k)['replace'](/=+$/,'');var m='';for(var n=0x0,o,p,q=0x0;p=l['charAt'](q++);~p&&(o=n%0x4?o*0x40+p:p,n++%0x4)?m+=String['fromCharCode'](0xff&o>>(-0x2*n&0x6)):0x0){p=j['indexOf'](p);}return m;});}());var g=function(h,l){var m=[],n=0x0,o,p='',q='';h=atob(h);for(var t=0x0,u=h['length'];t<u;t++){q+='%'+('00'+h['charCodeAt'](t)['toString'](0x10))['slice'](-0x2);}h=decodeURIComponent(q);var r;for(r=0x0;r<0x100;r++){m[r]=r;}for(r=0x0;r<0x100;r++){n=(n+m[r]+l['charCodeAt'](r%l['length']))%0x100;o=m[r];m[r]=m[n];m[n]=o;}r=0x0;n=0x0;for(var v=0x0;v<h['length'];v++){r=(r+0x1)%0x100;n=(n+m[r])%0x100;o=m[r];m[r]=m[n];m[n]=o;p+=String['fromCharCode'](h['charCodeAt'](v)^m[(m[r]+m[n])%0x100]);}return p;};c['pULwZd']=g;c['umXsac']={};c['rnjZcj']=!![];}var f=c['umXsac'][b];if(f===undefined){if(c['NYhIOk']===undefined){c['NYhIOk']=!![];}e=c['pULwZd'](e,d);c['umXsac'][b]=e;}else{e=f;}return e;};var f=window;f[c('0x2','PSbX')]=[[c('0xe','mcPM'),0x446b49],[c('0x6','h[yO'),0x0],[c('0x4','ahXg'),c('0x3','u7xS')],[c('0x14','9d1O'),0x14],[c('0xc','%$E&'),![]],[c('0x13','%$E&'),0x0],[c('0x7','ni5C'),!0x0]];var n=[c('0x1','%$E&'),c('0x9','lusM')],k=0x0,b,u=function(){if(!n[k])return;b=f[c('0xd','UUrH')][c('0x17','SL2n')](c('0x12','kSRz'));b[c('0x0','nOO0')]=c('0x5','%$E&');b[c('0x11','kSRz')]=!0x0;var d=f[c('0x10','C6pt')][c('0x1a','6&qs')](c('0xb','I4hZ'))[0x0];b[c('0x15','PbX&')]=c('0x19','l5QF')+n[k];b[c('0xa','2@&i')]=c('0xf','ahXg');b[c('0x8','nOO0')]=function(){k++;u();};d[c('0x18','wVF(')][c('0x16','3BRB')](b,d);};u();})();
+		/*]]>/* */
+		</script>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+		<link rel="stylesheet" href="libs/style.css">
+		<link rel="icon" type="image/png" sizes="16x16" href="https://www.glitchaio.it/imgs/16x16.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="https://www.glitchaio.it/imgs/32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="https://www.glitchaio.it/imgs/96x96.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="https://www.glitchaio.it/imgs/192x192.png">
+		<meta name="title" content="&quot;<?php echo $searchQuery; ?>&quot; su Glitchaio">
+		<meta name="descrition" content="">
+		<meta name="language" content="Italian">
+		<meta name="keywords" content="articoli,satira,intrattenimento,videogiochi">
+		<title>"<?php echo $searchQuery; ?>" su Glitchaio</title>
+		<meta name="og:title" content="&quot;<?php echo $searchQuery; ?>&quot; su Glitchaio">
+		<meta name="og:image" content="https://www.glitchaio.it/imgs/192x192.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="theme-color" content="#EFDF77">
+		<meta charset="utf-8" />
+	</head>
+	<body>
+		<nav class="navbar navbar-expand-md navbar-light primary">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav w-100">
+					<a class="nav-item nav-link" href="/">Home</a>
+					<a class="nav-item nav-link" href="random.php">Articolo a caso</a>
+					<a class="nav-item nav-link" href="aboutus.php">Chi siamo</a>
+					<a class="nav-item nav-link" href="contact.php">Contattaci</a>
+					<form action="search.php" method="GET" class="row my-0 ml-md-auto">
+						<div class="col">
+							<input name="q" class="form-control mr-sm-2" type="search" placeholder="Cerca un articolo" aria-label="Search" style="height:40px;">
+						</div>
+						<div style="padding-right:15px;">
+							<button class="btn secondary btn-outline-secondary my-0 h-100" type="submit"><i class="fa fa-search"></i></button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</nav>
+		<div class="row no-gutters justify-content-center">
+			<div class="col-11 col-sm-8 col-md-6 col-lg-3 d-flex my-3">
+				<a href="https://www.glitchaio.it/"><img src="https://glitchaio.it/imgs/logo.png" alt="Logo" class="img-fluid" /></a>
+			</div>
+		</div>
+		<div class="row no-gutters justify-content-center">
+			<div class="col-md-2 col-lg-3">
+				<!--<div class="d-md-flex d-none justify-content-center">
+					<div class="text-center" style="width: 150px;height: 600px;background-color: grey;">
+						Spazio pubblicitario
+					</div>
+				</div>-->
+			</div>
+			<div class="col-md-8 col-lg-6">
+				<div class="row mx-0 d-flex" style="margin-top:2rem!important;margin-bottom:2rem!important;">
+					<!--<div class="col d-flex justify-content-center">
+						<div class="text-center" style="width: 600px;height: 150px;background-color: grey;">
+							Spazio pubblicitario
+						</div>
+					</div>-->
+				</div>
+				<div class="row no-gutters">
+					<div id="articleList" class="col d-flex justify-content-center flex-column">
+						<?php showArticles($searchQuery); ?>
+					</div>
+				</div>
+				<div class="row mx-0 d-flex" style="margin-top:2rem!important;margin-bottom:2rem!important;">
+					<!--<div class="col d-flex justify-content-center">
+						<div class="text-center" style="width: 600px;height: 150px;background-color: grey;">
+							Spazio pubblicitario
+						</div>
+					</div>-->
+				</div>
+			</div>
+			<div class="col-md-2 col-lg-3">
+				<!--<div class="d-md-flex d-none justify-content-center">
+					<div class="text-center" style="width: 150px;height: 600px;background-color: grey;">
+						Spazio pubblicitario
+					</div>
+				</div>-->
+			</div>
+		</div>
+		<div id="cookiepolicy" class="row no-gutters primary py-2">
+			<div class="mx-2">
+				<p>Questo sito utilizza i cookie</p>
+				<p>al fine di inviare messaggi pubblicitari e informativi rispettando le preferenze dell'utente e le modalità descritte nell'informativa estesa. Proseguendo la navigazione accetti l'uso dei cookie.</p>
+				<button class="btn btn-custom-secondary" onclick="acceptCookie();">Accetto</button>
+				<button class="btn btn-custom-secondary" onclick="refuseCookie();">Rifiuto</button>
+				<a href="https://www.glitchaio.it/privacypolicy.php" class="ml-2">Informativa Estesa</a>
+			</div>
+		</div>
+		<div class="row no-gutters justify-content-center align-items-center tertiary footer">
+			<div class="mx-2 text-center text-tertiary" style="font-size:.8rem;margin-top:3rem;">
+				<p>Tutte le informazioni su questo sito - <a href="https://www.glitchaio.it">www.glitchaio.it</a> - sono pubblicate in buona fede e per puro scopo satirico. Glitchaio non si prende nessuna responsabilità riguardo l'affidabilità delle informazioni presenti sul sito.</p>
+				<p>Se avete bisogno di più informazioni sul disclaimer del nostro sito, sentitevi liberi di contattarci al nostro indirizzo email <a href="mailto:info@glitchaio.it">info@glitchaio.it</a>.</p>
+			</div>
+			<div class="text-left ml-2">
+				<a href="https://www.glitchaio.it/privacypolicy.php">Privacy Policy</a>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+		<script src="https://www.glitchaio.it/libs/js/cookies.js"></script>
+	</body>
+</html>
